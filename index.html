@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content=".">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On the Content Bias in Fréchet Video Distance</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">On the Content Bias in Fréchet Video Distance
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://songweige.github.io/">Songwei
+                Ge</a><sup>1</sup>&nbsp</span>
+            <span class="author-block">
+              <a href="https://anime26398.github.io/">Aniruddha Mahapatra</a><sup>2, 3</sup>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://gauravparmar.com/">Gaurav Parmar</a><sup>2</sup>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan
+                Zhu</a><sup>2</sup>&nbsp</span>
+            <span class="author-block">
+              <a href="https://jbhuang0604.github.io/">Jia-Bin
+                Huang</a><sup>1</sup>&nbsp
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Maryland, College Park
+              &nbsp</span>
+            <span class="author-block"><sup>2</sup>Carnegie
+              Mellon University</span>
+            <span class="author-block"><sup>3</sup>Adobe Research &nbsp</span>
+          </div>
+
+
+          <div class="is-size-5 publication-venue">
+            CVPR 2024
+          </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <div class="publication-links">
+          <!-- PDF Link. -->
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/" class="external-link button is-normal is-rounded">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/songweige/content-debiased-fvd"
+              class="external-link button is-normal is-rounded">
+              <span class="icon">
+                <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                  data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 496 512" data-fa-i2svg="">
+                  <path fill="currentColor"
+                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                  </path>
+                </svg>
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="./#bibtex"
+              class="external-link button is-normal is-rounded">
+              <span class="icon">
+                <i class="ai ai-obp"></i>
+              </span>
+              <span>BibTex</span>
+            </a>
+          </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero" style="margin-bottom: 50px;margin-top: 0px;">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered">
+      <div class="column">
+        <div class="has-text-justified">
+          <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+            <source src="./static/videos/sky_clean.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">
+              Reference Videos
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+            <source src="./static/videos/sky_Motion Blur Spatial_5.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">
+            Mild Spatial Corruption. <br>
+            FVD=317.10
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+            <source src="./static/videos/sky_Motion Blur_3.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered">
+            + Severe Temporal Corruption. <br>
+            FVD=310.52
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="blog-text">
+      <b class="topic"> FVD favors the quality of individual frames over realistic motions. </b> FVD is the primary metric for evaluating 
+      the quality of video generation models. Ideally, such a metric should capture <i>both</i> spatial and temporal features.
+      However, we show that it is heavily biased towards the former. 
+      
+      <br><br> As in this simple test, we compare a reference set of videos 
+      (left) to two different sets of corruptions. The first corruption set introduces mild spatial corruption 
+      (middle), reflected in an FVD score of 317.10. In contrast, the second set induces slightly less spatial corruption yet 
+      additional temporal inconsistency (right), 
+      yet results in a <i>lower (better)</i> FVD score of 310.52. This discrepancy highlights the metric's bias towards spatial quality.
+      In the following, we show experiments to quantify such <i>content bias</i> and understand the origin, progressively adapting from synthetic to real-world settings.
+    </p>
+  </div>
+  </section>
+
+  <hr>
+  <section class="hero" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="container is-max-desktop">
+      <!-- <div class="columns is-centered">
+        <div class="column">
+          <p class="has-text-centered">
+            Elastic Transformation
+          </p>
+        </div>
+        <div class="column">
+          <p class="has-text-centered">
+            Motion Blur
+          </p>
+        </div>
+      </div> -->
+        <div class="columns is-centered">
+        <div class="column">
+          <div class="has-text-justified">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig3_elastic_clean.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+                Original Video 1
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig3_elastic_s.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              Spatial only 1
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig3_elastic_st.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              Spatiotemporal 1
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="has-text-justified">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig3_motion_blur_clean.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+                Original Video 2
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig3_motion_blur_s.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              Spatial only 2
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig3_motion_blur_st.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              Spatiotemporal 2
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="content has-text-centered">
+        <img src="./static/images/fid_fvd.png" width="150%">
+      </div>
+      <p class="blog-text">
+        <b class="topic"> Quantify the temporal sensitivity. </b> 
+        We first develop ways to distort videos so that the frame quality deteriorates to the same level while the temporal quality 
+        is either intact or significantly decreased. 
+        By comparing the FVD of the spatiotemporal corruption with the spatial corruption, we can analyze the reletive 
+        temporal sensitivity of the metric. 
+        In practice, this is achieved by applying the same or different distortion operations to the frames in the video. 
+        
+        <br><br>The minimal FID difference in the table between the spatial and spatiotemporal distortion results across different datasets verify our claim 
+        that the two distorted video sets share similar frame quality.
+      </p>
+    </div>
+  </section>
+
+  <hr>
+  <section class="hero" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <img src="./static/images/cause.png" width="100%">
+      </div>
+      <p class="blog-text">
+        <b class="topic"> Origin of the content bias. </b> The FVD bias can be attributed to the features extracted from a video classifier 
+          trained on the content-biased dataset with a supervised objective. FVD employs an Inflated 3D ConvNet (I3D) model, 
+          initially trained for action recognition task on the Kinetics-400 dataset, which is known to be biased to the 
+          static features in the content instead of motions. As shown in the Figure, we find that using features from 
+          self-supervised models like VideoMAE helps mitigate such bias.
+      </p>
+    </div>
+  </section>
+
+
+  <hr>
+  <section class="hero" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="container is-max-desktop">
+      <div class="content has-text-centered">
+        <img src="./static/images/null_space.png" width="100%">
+      </div>
+      <p class="blog-text">
+        <b class="topic">Without improving the temporal quality of the generated videos, the FVD scores can still be decreased. </b>
+        <br>We follow Kynkäänniemi et al. to probe the FVD perceptual null space, namely the video space where the temporal quality of
+        generated videos remains unchanged while the FVD score can be effectively adjusted. To do so, we first generate a larger set of
+        videos <i>without any motions</i> from the same generation model. We then meticulously sample from this set to induce a decrease in FVD.
+        <br><br>As in the table, despite the absence of motion in the generated videos, one can still reduce FVD by up to half by selectively
+        choosing from the candidate videos on the Sky Time-lapse dataset. Conversely, when computing the features 
+        for FVD using the VideoMAE-v2 mode, which is sensitive to temporal quality, the observed gaps significantly diminish, and the FVD 
+        scores can hardly be decreased through resampling.
+      </p>
+    </div>
+  </section>
+
+  <hr>
+  <section class="hero" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" style="align-items: center;">
+        <div class="column">
+          <div class="has-text-justified">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig9_stylegan-v_default.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              Default StyleGAN-v.
+            </p>
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig9_stylegan-v_lstm16.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              StyleGAN-v with LSTM motion codes.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <img src="./static/images/styleganv.png" width="100%">
+          </div>
+        </div>
+      </div>
+      <p class="blog-text">
+        <b class="topic">Real-world example 1. </b> The
+        default StyleGAN-v generates natural motions while the variant
+        with LSTM motion codes generates repeated patterns. However, previous study found that the FVD metric fails to capture the worse temporal quality.
+        Upon computing FVD using VideoMAE-v2 features, we have them to be in accordance with human judgment.
+      </p>
+    </div>
+  </section>
+
+
+  <hr>
+  <section class="hero" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered" style="align-items: center;">
+        <div class="column">
+          <div class="has-text-justified">
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig10_digan_0_16.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              Frames 0 - 16.
+            </p>
+            <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
+              <source src="./static/videos/fig10_digan_128_144.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered">
+              Frames 128 - 144.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <img src="./static/images/digan.png" width="100%">
+          </div>
+        </div>
+      </div>
+      <p class="blog-text">
+        <b class="topic">Real-world example 2. </b> The initial 16 frames generated by DIGAN
+          exhibit natural motions, while the extrapolated frames contain periodic
+          artifacts. Similarly, previous paper noticed that the FVD fails to distinguish between the two. Instaed,
+          FVD computed using VideoMAE features better follows human judgment.
+      </p>
+    </div>
+  </section>
+
+  <section class="hero" style="margin-bottom: 50px;margin-top: 50px;">
+    <div class="container is-max-desktop">
+    <p>
+      <b class="topic">FVD tookit. </b> We develop code and provide pre-computed features for computing FVD with 
+      different feature extractors. The toolkit is available at <a href="https://github.com/songweige/content-debiased-fvd">Github repo</a>.
+    </p>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title"><a id="bibtex">BibTeX</a></h2>
+      <pre><code>@inproceedings{ge2024content,
+      title={On the Content Bias in Fréchet Video Distance},
+      author={Ge, Songwei and Mahapatra, Aniruddha and Parmar, Gaurav and Zhu, Jun-Yan and Huang, Jia-Bin},
+      booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      year={2024}
+}</code></pre>
+    </div>
+  </section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website templated borrowed from this <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

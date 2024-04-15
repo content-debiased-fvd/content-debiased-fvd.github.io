@@ -131,7 +131,7 @@
             <source src="./static/videos/sky_Motion Blur Spatial_5.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered">
-            Mild Spatial Corruption. <br>
+            Medium Spatial Corruption <br> No Temporal Corruption <br>
             FVD=317.10
           </p>
         </div>
@@ -142,20 +142,20 @@
             <source src="./static/videos/sky_Motion Blur_3.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered">
-            + Severe Temporal Corruption. <br>
+            Small Spatial Corruption <br> Severe Temporal Corruption <br>
             FVD=310.52
           </p>
         </div>
       </div>
     </div>
     <p class="blog-text">
-      <b class="topic"> FVD favors the quality of individual frames over realistic motions. </b> FVD is the primary metric for evaluating 
-      the quality of video generation models. Ideally, such a metric should capture <i>both</i> spatial and temporal features.
-      However, we show that it is heavily biased towards the former. 
+      <b class="topic"> FVD is biased towards per-frame quality than temporal consistency. </b> FVD is the primary metric for evaluating 
+      video generation models. Ideally, such a metric should capture <i>both</i> spatial and temporal aspects.
+      However, our experiments reveal a strong bias toward individual frame quality.
       
       <br><br> As in this simple test, we compare a reference set of videos 
       (left) to two different sets of corruptions. The first corruption set introduces mild spatial corruption 
-      (middle), reflected in an FVD score of 317.10. In contrast, the second set induces slightly less spatial corruption yet 
+      (middle), which results in an FVD score of 317.10. In contrast, the second set induces slightly less spatial corruption and 
       additional temporal inconsistency (right), 
       yet results in a <i>lower (better)</i> FVD score of 310.52. This discrepancy highlights the metric's bias towards spatial quality.
       In the following, we show experiments to quantify such <i>content bias</i> and understand the origin, progressively adapting from synthetic to real-world settings.
@@ -245,14 +245,16 @@
       </div>
       <p class="blog-text">
         <b class="topic"> Quantify the temporal sensitivity. </b> 
-        We first develop ways to distort videos so that the frame quality deteriorates to the same level while the temporal quality 
+        We first develop ways to distort videos so that the frame quality deteriorates the same while the temporal quality 
         is either intact or significantly decreased. 
-        By comparing the FVD of the spatiotemporal corruption with the spatial corruption, we can analyze the reletive 
-        temporal sensitivity of the metric. 
-        In practice, this is achieved by applying the same or different distortion operations to the frames in the video. 
+        By comparing the FVD induced by the spatiotemporal corruption against the spatial corruption, we can analyze FVD's reletive 
+        sensitivity to the temporal aspect. 
+        In practice, this is achieved by applying the same or different distortion operations to the individual frames in the video. 
         
         <br><br>The minimal FID difference in the table between the spatial and spatiotemporal distortion results across different datasets verify our claim 
-        that the two distorted video sets share similar frame quality.
+        that the two distorted video sets share similar frame quality. We also find that FVD sometimes fails to detect the temporal quality decrease induced by
+        spatiotemporal corruption. For example, the temporal inconsistency in the FaceForensics dataset only raises FVD by 3.6%. 
+        To grasp the significance of the FVD increase due to temporal inconsistency, we compare it with the FVD values computed using different models below.
       </p>
     </div>
   </section>
@@ -264,11 +266,15 @@
         <img src="./static/images/cause.png" width="100%">
       </div>
       <p class="blog-text">
-        <b class="topic"> Origin of the content bias. </b> The FVD bias can be attributed to the features extracted from a video classifier 
-          trained on the content-biased dataset with a supervised objective. FVD employs an Inflated 3D ConvNet (I3D) model, 
+        <b class="topic"> Origin of FVD's content bias. </b> FVD employs an Inflated 3D ConvNet (I3D) model, 
           initially trained for action recognition task on the Kinetics-400 dataset, which is known to be biased to the 
-          static features in the content instead of motions. As shown in the Figure, we find that using features from 
-          self-supervised models like VideoMAE helps mitigate such bias.
+          static features in the content instead of motions. We thus conjecture that the FVD bias can be attributed to the features extracted from the 
+          supervised video classifier trained on the content-biased dataset. 
+          
+          <br><br> To unravel the confounding factors including the model architecture, training objectives, model capacity, and the dataset,
+          we further delve into a comparative study with different trained models, where the differences of these models are summarized in the table.
+          As shown in the Figure on the left, we find that using features from self-supervised models boosts FVD's temporal sensitivity.
+          Training on the content-debiased data further helps mitigate the bias.
       </p>
     </div>
   </section>
@@ -282,13 +288,18 @@
       </div>
       <p class="blog-text">
         <b class="topic">Without improving the temporal quality of the generated videos, the FVD scores can still be decreased. </b>
-        <br>We follow Kynkäänniemi et al. to probe the FVD perceptual null space, namely the video space where the temporal quality of
-        generated videos remains unchanged while the FVD score can be effectively adjusted. To do so, we first generate a larger set of
-        videos <i>without any motions</i> from the same generation model. We then meticulously sample from this set to induce a decrease in FVD.
-        <br><br>As in the table, despite the absence of motion in the generated videos, one can still reduce FVD by up to half by selectively
-        choosing from the candidate videos on the Sky Time-lapse dataset. Conversely, when computing the features 
+        We follow <a href="https://arxiv.org/abs/1904.06991">Kynkäänniemi et al.</a> 
+        to probe the FVD perceptual null space, namely the space where the temporal quality of
+        generated videos remains unchanged while the FVD score can be effectively adjusted. To do so, we first generate a larger candidate set of
+        videos <i>without any motions</i>. We then meticulously sample from this set to induce a decrease in FVD (denoted as FVD*).
+        <br><br>As in the table above, across different video generators and training datasets,
+        despite the absence of motion in the generated videos, one can still reduce FVD by up to half through selectively
+        choosing from the candidate videos. Conversely, when computing the features 
         for FVD using the VideoMAE-v2 mode, which is sensitive to temporal quality, the observed gaps significantly diminish, and the FVD 
         scores can hardly be decreased through resampling.
+        <br><br>We now have concluded that FVD is highly insensitive to the temporal quality and consistency of the generated videos, and verified the 
+        hypothesis that the bias originates from the content-biased video features and show that self-supervised features can mitigate
+        the issues. Next, we extend our study to real-world examples.
       </p>
     </div>
   </section>
@@ -320,9 +331,10 @@
         </div>
       </div>
       <p class="blog-text">
-        <b class="topic">Real-world example 1. </b> The
-        default StyleGAN-v generates natural motions while the variant
-        with LSTM motion codes generates repeated patterns. However, previous study found that the FVD metric fails to capture the worse temporal quality.
+        <b class="topic">Case study I. </b> The
+        default <a href="https://arxiv.org/abs/2112.14683">StyleGAN-v</a> generates natural motions while the variant
+        with LSTM motion codes generates repeated temporal patterns. However, previous study found that the FVD metric fails to capture the worse quality.
+        We observe the same trend as shown in the table.
         Upon computing FVD using VideoMAE-v2 features, we have them to be in accordance with human judgment.
       </p>
     </div>
@@ -356,9 +368,9 @@
         </div>
       </div>
       <p class="blog-text">
-        <b class="topic">Real-world example 2. </b> The initial 16 frames generated by DIGAN
-          exhibit natural motions, while the extrapolated frames contain periodic
-          artifacts. Similarly, previous paper noticed that the FVD fails to distinguish between the two. Instaed,
+        <b class="topic">Case study II. </b> The initial 16 frames generated by <a href="https://arxiv.org/abs/2202.10571">DIGAN</a>
+          exhibit natural motions, while the extrapolated frames contain periodic spatiotemporal
+          artifacts. Similarly, previous paper noticed that the FVD fails to distinguish between the two as confirmed by the table. Instaed,
           FVD computed using VideoMAE features better follows human judgment.
       </p>
     </div>

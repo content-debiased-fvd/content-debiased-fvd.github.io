@@ -166,18 +166,22 @@
   <hr>
   <section class="hero" style="margin-bottom: 50px;margin-top: 50px;">
     <div class="container is-max-desktop">
-      <!-- <div class="columns is-centered">
-        <div class="column">
+      <div class="columns is-centered">
+        <div style="width: 16%;">
+        </div>
+        <div style="width: 33%;">
           <p class="has-text-centered">
-            Elastic Transformation
+            Corruptions
           </p>
         </div>
-        <div class="column">
+        <div style="width: 16%;">
+        </div>
+        <div style="width: 33%;">
           <p class="has-text-centered">
-            Motion Blur
+            Corruptions
           </p>
         </div>
-      </div> -->
+      </div>
         <div class="columns is-centered">
         <div class="column">
           <div class="has-text-justified">
@@ -185,7 +189,7 @@
               <source src="./static/videos/fig3_elastic_clean.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered">
-                Original Video 1
+                Original Video
             </p>
           </div>
         </div>
@@ -195,7 +199,7 @@
               <source src="./static/videos/fig3_elastic_s.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered">
-              Spatial only 1
+              Spatial only
             </p>
           </div>
         </div>
@@ -205,7 +209,7 @@
               <source src="./static/videos/fig3_elastic_st.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered">
-              Spatiotemporal 1
+              Spatiotemporal
             </p>
           </div>
         </div>
@@ -215,7 +219,7 @@
               <source src="./static/videos/fig3_motion_blur_clean.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered">
-                Original Video 2
+                Original Video
             </p>
           </div>
         </div>
@@ -225,7 +229,7 @@
               <source src="./static/videos/fig3_motion_blur_s.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered">
-              Spatial only 2
+              Spatial only
             </p>
           </div>
         </div>
@@ -235,13 +239,13 @@
               <source src="./static/videos/fig3_motion_blur_st.mp4" type="video/mp4">
             </video>
             <p class="has-text-centered">
-              Spatiotemporal 2
+              Spatiotemporal
             </p>
           </div>
         </div>
       </div>
       <div class="content has-text-centered">
-        <img src="./static/images/fid_fvd.png" width="150%">
+        <img src="./static/images/fid_fvd.png" width="200%">
       </div>
       <p class="blog-text">
         <b class="topic"> Quantify the temporal sensitivity. </b> 
@@ -249,12 +253,13 @@
         is either intact or significantly decreased. 
         By comparing the FVD induced by the spatiotemporal corruption against the spatial corruption, we can analyze FVD's reletive 
         sensitivity to the temporal aspect. 
-        In practice, this is achieved by applying the same or different distortion operations to the individual frames in the video. 
         
-        <br><br>The minimal FID difference in the table between the spatial and spatiotemporal distortion results across different datasets verify our claim 
-        that the two distorted video sets share similar frame quality. We also find that FVD sometimes fails to detect the temporal quality decrease induced by
+        <br><br>We first verify our claim that the two distorted video sets share similar frame quality with the minimal FID difference, 
+        shown in the table, between the spatial and spatiotemporal distortion across different datasets.
+        We then find that FVD sometimes fails to detect the temporal quality decrease induced by
         spatiotemporal corruption. For example, the temporal inconsistency in the FaceForensics dataset only raises FVD by 3.6%. 
-        To grasp the significance of the FVD increase due to temporal inconsistency, we compare it with the FVD values computed using different models below.
+        To further grasp the significance of the FVD increase due to temporal inconsistency, 
+        we compare it with the FVD computed using different models below.
       </p>
     </div>
   </section>
@@ -268,8 +273,8 @@
       <p class="blog-text">
         <b class="topic"> Origin of FVD's content bias. </b> FVD employs an Inflated 3D ConvNet (I3D) model, 
           initially trained for action recognition task on the Kinetics-400 dataset, which is known to be biased to the 
-          static features in the content instead of motions. We thus conjecture that the FVD bias can be attributed to the features extracted from the 
-          supervised video classifier trained on the content-biased dataset. 
+          static features in the content instead of motions. We thus conjecture that the FVD bias can be attributed to 
+          the features extracted from such supervised video classifier. 
           
           <br><br> To unravel the confounding factors including the model architecture, training objectives, model capacity, and the dataset,
           we further delve into a comparative study with different trained models, where the differences of these models are summarized in the table.
@@ -288,6 +293,7 @@
       </div>
       <p class="blog-text">
         <b class="topic">Without improving the temporal quality of the generated videos, the FVD scores can still be decreased. </b>
+        We now move from synthetic corruptions to generated videos.
         We follow <a href="https://arxiv.org/abs/1904.06991">Kynkäänniemi et al.</a> 
         to probe the FVD perceptual null space, namely the space where the temporal quality of
         generated videos remains unchanged while the FVD score can be effectively adjusted. To do so, we first generate a larger candidate set of
@@ -295,7 +301,7 @@
         <br><br>As in the table above, across different video generators and training datasets,
         despite the absence of motion in the generated videos, one can still reduce FVD by up to half through selectively
         choosing from the candidate videos. Conversely, when computing the features 
-        for FVD using the VideoMAE-v2 mode, which is sensitive to temporal quality, the observed gaps significantly diminish, and the FVD 
+        for FVD using the VideoMAE-v2 model, which is sensitive to temporal quality, the observed gaps significantly diminish, and the FVD 
         scores can hardly be decreased through resampling.
         <br><br>We now have concluded that FVD is highly insensitive to the temporal quality and consistency of the generated videos, and verified the 
         hypothesis that the bias originates from the content-biased video features and show that self-supervised features can mitigate
@@ -332,9 +338,9 @@
       </div>
       <p class="blog-text">
         <b class="topic">Case study I. </b> The
-        default <a href="https://arxiv.org/abs/2112.14683">StyleGAN-v</a> generates natural motions while the variant
-        with LSTM motion codes generates repeated temporal patterns. However, previous study found that the FVD metric fails to capture the worse quality.
-        We observe the same trend as shown in the table.
+        default <a href="https://arxiv.org/abs/2112.14683">StyleGAN-v</a> model generates natural motions while its variant
+        with LSTM motion codes generates repeated temporal patterns. However, previous study found that the FVD metric fails to capture the variant's worse quality.
+        We observe the same trend as shown in the table on the right.
         Upon computing FVD using VideoMAE-v2 features, we have them to be in accordance with human judgment.
       </p>
     </div>
@@ -368,8 +374,8 @@
         </div>
       </div>
       <p class="blog-text">
-        <b class="topic">Case study II. </b> The initial 16 frames generated by <a href="https://arxiv.org/abs/2202.10571">DIGAN</a>
-          exhibit natural motions, while the extrapolated frames contain periodic spatiotemporal
+        <b class="topic">Case study II. </b> The initial 16 frames generated by the <a href="https://arxiv.org/abs/2202.10571">DIGAN</a>
+          model exhibit natural motions, while the extrapolated frames contain periodic spatiotemporal
           artifacts. Similarly, previous paper noticed that the FVD fails to distinguish between the two as confirmed by the table. Instaed,
           FVD computed using VideoMAE features better follows human judgment.
       </p>

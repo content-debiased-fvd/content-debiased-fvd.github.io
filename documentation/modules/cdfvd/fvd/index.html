@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" data-content_root="../../">
+<html class="no-js" lang="en" data-content_root="../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
@@ -11,10 +11,10 @@
         gtag('js', new Date());
         gtag('config', 'G-RRGY51J5ZH');
     </script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>fvd - content-debiased-fvd</title>
+        <title>cdfvd.fvd - content-debiased-fvd</title>
       <link rel="stylesheet" type="text/css" href="../../../assets/pygments.css?v=b20cc3f5" />
     <link rel="stylesheet" type="text/css" href="../../../assets/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../../assets/css/custom.css" />
@@ -135,7 +135,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../"><div class="brand">content-debiased-fvd</div></a>
+      <a href="../../../"><div class="brand">content-debiased-fvd</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -155,12 +155,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../">
   
   
   <span class="sidebar-brand-text">content-debiased-fvd</span>
   
-</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+</a><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -168,12 +168,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Core Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../fvd/">FVD Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fvd/">FVD Object</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Utils</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../data_utils/">Data Utils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../metric_utils/">Metric Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_utils/">Data Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../metric_utils/">Metric Utils</a></li>
 </ul>
 
 </div>
@@ -207,14 +207,13 @@
           </label>
         </div>
         <article role="main">
-          <h1>Source code for fvd</h1><div class="highlight"><pre>
+          <h1>Source code for cdfvd.fvd</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">glob</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">utils.data_utils</span> <span class="kn">import</span> <span class="n">get_dataloader</span><span class="p">,</span> <span class="n">VID_EXTENSIONS</span>
-<span class="kn">from</span> <span class="nn">utils.metric_utils</span> <span class="kn">import</span> <span class="n">seed_everything</span><span class="p">,</span> <span class="n">FeatureStats</span>
+<span class="kn">from</span> <span class="nn">.utils.data_utils</span> <span class="kn">import</span> <span class="n">get_dataloader</span><span class="p">,</span> <span class="n">VID_EXTENSIONS</span>
+<span class="kn">from</span> <span class="nn">.utils.metric_utils</span> <span class="kn">import</span> <span class="n">seed_everything</span><span class="p">,</span> <span class="n">FeatureStats</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">torch</span>
@@ -223,10 +222,10 @@
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">from</span> <span class="nn">einops</span> <span class="kn">import</span> <span class="n">rearrange</span>
 
-<span class="kn">from</span> <span class="nn">third_party.VideoMAEv2.utils</span> <span class="kn">import</span> <span class="n">load_videomae_model</span><span class="p">,</span> <span class="n">preprocess_videomae</span>
-<span class="kn">from</span> <span class="nn">third_party.i3d.utils</span> <span class="kn">import</span> <span class="n">load_i3d_model</span><span class="p">,</span> <span class="n">preprocess_i3d</span>
+<span class="kn">from</span> <span class="nn">.third_party.VideoMAEv2.utils</span> <span class="kn">import</span> <span class="n">load_videomae_model</span><span class="p">,</span> <span class="n">preprocess_videomae</span>
+<span class="kn">from</span> <span class="nn">.third_party.i3d.utils</span> <span class="kn">import</span> <span class="n">load_i3d_model</span><span class="p">,</span> <span class="n">preprocess_i3d</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
 <span class="kn">import</span> <span class="nn">numpy.typing</span> <span class="k">as</span> <span class="nn">npt</span>
 
 <span class="k">def</span> <span class="nf">get_videomae_features</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">videos</span><span class="p">,</span> <span class="n">batchsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">model_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">):</span>
@@ -253,9 +252,9 @@
     <span class="k">return</span> <span class="n">stats</span>
 
 
-<div class="viewcode-block" id="cd_fvd">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd">[docs]</a>
-<span class="k">class</span> <span class="nc">cd_fvd</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="cdfvd">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd">[docs]</a>
+<span class="k">class</span> <span class="nc">cdfvd</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;This class loads a pretrained model (I3D or VideoMAE) and contains functions to compute the FVD score between real and fake videos.</span>
 
 <span class="sd">    Args:</span>
@@ -291,8 +290,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">load_i3d_model</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">ckpt_path</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dtype</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">feature_fn</span> <span class="o">=</span> <span class="n">get_i3d_logits</span>
 
-<div class="viewcode-block" id="cd_fvd.compute_fvd_from_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.compute_fvd_from_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.compute_fvd_from_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.compute_fvd_from_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">compute_fvd_from_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fake_stats</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">FeatureStats</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">real_stats</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">FeatureStats</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;This function computes the FVD score between real and fake videos using precomputed features.</span>
 <span class="sd">        If the stats are not provided, it uses the stats stored in the object.</span>
@@ -302,7 +301,7 @@
 <span class="sd">            real_stats: `FeatureStats` object containing the features of the real videos.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
-<span class="sd">            fvd: FVD score between the real and fake videos.</span>
+<span class="sd">            FVD score between the real and fake videos.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">fake_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span> <span class="k">if</span> <span class="n">fake_stats</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">fake_stats</span>
         <span class="n">real_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span> <span class="k">if</span> <span class="n">real_stats</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">real_stats</span>
@@ -313,8 +312,8 @@
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">sigma_fake</span> <span class="o">+</span> <span class="n">sigma_real</span> <span class="o">-</span> <span class="n">s</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span></div>
 
     
-<div class="viewcode-block" id="cd_fvd.compute_fvd">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.compute_fvd">[docs]</a>
+<div class="viewcode-block" id="cdfvd.compute_fvd">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.compute_fvd">[docs]</a>
     <span class="k">def</span> <span class="nf">compute_fvd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real_videos</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">],</span> <span class="n">fake_videos</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function computes the FVD score between real and fake videos in the form of numpy arrays.</span>
@@ -324,7 +323,7 @@
 <span class="sd">            fake_videos: A numpy array of videos with shape `(B, T, H, W, C)`, values in the range `[0, 255]`</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
-<span class="sd">            fvd: FVD score between the real and fake videos.</span>
+<span class="sd">            FVD score between the real and fake videos.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">real_videos</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">model_dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dtype</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">fake_videos</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">model_dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dtype</span><span class="p">)</span>
@@ -332,8 +331,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="cd_fvd.compute_real_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.compute_real_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.compute_real_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.compute_real_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">compute_real_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loader</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FeatureStats</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function computes the real features from a dataset.</span>
@@ -342,7 +341,7 @@
 <span class="sd">            loader: real videos, either in the type of dataloader or list of numpy arrays.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            real_stats: FeatureStats object containing the features of the real videos.</span>
+<span class="sd">            FeatureStats object containing the features of the real videos.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">seed_everything</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">loader</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -361,8 +360,8 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span></div>
 
     
-<div class="viewcode-block" id="cd_fvd.compute_fake_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.compute_fake_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.compute_fake_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.compute_fake_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">compute_fake_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loader</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FeatureStats</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function computes the fake features from a dataset.</span>
@@ -371,7 +370,7 @@
 <span class="sd">            loader: fake videos, either in the type of dataloader or list of numpy arrays.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
-<span class="sd">            fake_stats: FeatureStats object containing the features of the fake videos.</span>
+<span class="sd">            FeatureStats object containing the features of the fake videos.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">seed_everything</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span>
         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span><span class="o">.</span><span class="n">max_items</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span><span class="o">.</span><span class="n">num_items</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span><span class="o">.</span><span class="n">max_items</span><span class="p">:</span>
@@ -387,8 +386,8 @@
 
 
 
-<div class="viewcode-block" id="cd_fvd.add_real_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.add_real_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.add_real_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.add_real_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">add_real_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real_videos</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function adds features of real videos to the real_stats object.</span>
@@ -399,8 +398,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">real_videos</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">model_dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dtype</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="cd_fvd.add_fake_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.add_fake_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.add_fake_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.add_fake_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">add_fake_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fake_videos</span><span class="p">:</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function adds features of fake videos to the fake_stats object.</span>
@@ -411,8 +410,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_fn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">fake_videos</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span> <span class="n">model_dtype</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model_dtype</span><span class="p">)</span></div>
 
     
-<div class="viewcode-block" id="cd_fvd.empty_real_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.empty_real_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.empty_real_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.empty_real_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">empty_real_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function empties the real_stats object.</span>
@@ -420,8 +419,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span> <span class="o">=</span> <span class="n">FeatureStats</span><span class="p">(</span><span class="n">max_items</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">real_stats</span><span class="o">.</span><span class="n">max_items</span><span class="p">,</span> <span class="n">capture_mean_cov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="cd_fvd.empty_fake_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.empty_fake_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.empty_fake_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.empty_fake_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">empty_fake_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function empties the real_stats object.</span>
@@ -429,8 +428,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span> <span class="o">=</span> <span class="n">FeatureStats</span><span class="p">(</span><span class="n">max_items</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fake_stats</span><span class="o">.</span><span class="n">max_items</span><span class="p">,</span> <span class="n">capture_mean_cov</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
     
-<div class="viewcode-block" id="cd_fvd.save_real_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.save_real_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.save_real_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.save_real_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">save_real_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function saves the real_stats object to a file.</span>
@@ -442,8 +441,8 @@
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Real stats saved to </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span></div>
 
     
-<div class="viewcode-block" id="cd_fvd.load_real_stats">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.load_real_stats">[docs]</a>
+<div class="viewcode-block" id="cdfvd.load_real_stats">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.load_real_stats">[docs]</a>
     <span class="k">def</span> <span class="nf">load_real_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function loads the real_stats object from a file.</span>
@@ -455,8 +454,8 @@
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Real stats loaded from </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="cd_fvd.load_videos">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.load_videos">[docs]</a>
+<div class="viewcode-block" id="cdfvd.load_videos">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.load_videos">[docs]</a>
     <span class="k">def</span> <span class="nf">load_videos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">video_info</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">resolution</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span> <span class="n">sequence_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">sample_every_n_frames</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
                     <span class="n">data_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;video_numpy&#39;</span><span class="p">,</span> <span class="n">num_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
@@ -476,7 +475,7 @@
 <span class="sd">            batch_size: Batch size for the dataloader.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
-<span class="sd">            video_loader: Dataloader or list of numpy arrays containing the videos.</span>
+<span class="sd">            Dataloader or list of numpy arrays containing the videos.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="n">data_type</span><span class="o">==</span><span class="s1">&#39;video_numpy&#39;</span> <span class="ow">or</span> <span class="n">video_info</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.npy&#39;</span><span class="p">):</span>
             <span class="n">video_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">video_info</span><span class="p">)</span>
@@ -520,8 +519,8 @@
         <span class="k">return</span> <span class="n">video_loader</span></div>
 
 
-<div class="viewcode-block" id="cd_fvd.offload_model_to_cpu">
-<a class="viewcode-back" href="../../fvd/#fvd.cd_fvd.offload_model_to_cpu">[docs]</a>
+<div class="viewcode-block" id="cdfvd.offload_model_to_cpu">
+<a class="viewcode-back" href="../../../fvd/#cdfvd.fvd.cdfvd.offload_model_to_cpu">[docs]</a>
     <span class="k">def</span> <span class="nf">offload_model_to_cpu</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        This function offloads the model to the CPU to release the memory.</span>

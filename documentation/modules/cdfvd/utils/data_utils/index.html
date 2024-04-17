@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" data-content_root="../../../">
+<html class="no-js" lang="en" data-content_root="../../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
@@ -11,10 +11,10 @@
         gtag('js', new Date());
         gtag('config', 'G-RRGY51J5ZH');
     </script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
+    <link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>utils.data_utils - content-debiased-fvd</title>
+        <title>cdfvd.utils.data_utils - content-debiased-fvd</title>
       <link rel="stylesheet" type="text/css" href="../../../../assets/pygments.css?v=b20cc3f5" />
     <link rel="stylesheet" type="text/css" href="../../../../assets/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../../../assets/css/custom.css" />
@@ -135,7 +135,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../"><div class="brand">content-debiased-fvd</div></a>
+      <a href="../../../../"><div class="brand">content-debiased-fvd</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -155,12 +155,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../">
   
   
   <span class="sidebar-brand-text">content-debiased-fvd</span>
   
-</a><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
+</a><form class="sidebar-search-container" method="get" action="../../../../search/" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -168,12 +168,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Core Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../fvd/">FVD Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../fvd/">FVD Object</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Utils</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../data_utils/">Data Utils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../metric_utils/">Metric Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../data_utils/">Data Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../metric_utils/">Metric Utils</a></li>
 </ul>
 
 </div>
@@ -207,7 +207,7 @@
           </label>
         </div>
         <article role="main">
-          <h1>Source code for utils.data_utils</h1><div class="highlight"><pre>
+          <h1>Source code for cdfvd.utils.data_utils</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">os.path</span> <span class="k">as</span> <span class="nn">osp</span>
@@ -216,7 +216,6 @@
 <span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">argparse</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 
@@ -286,7 +285,7 @@
 
 
 <div class="viewcode-block" id="VideoData">
-<a class="viewcode-back" href="../../../data_utils/#utils.data_utils.VideoData">[docs]</a>
+<a class="viewcode-back" href="../../../../data_utils/#cdfvd.utils.data_utils.VideoData">[docs]</a>
 <span class="k">class</span> <span class="nc">VideoData</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Class to create dataloaders for video datasets </span>
 
@@ -351,7 +350,7 @@
 
 
 <div class="viewcode-block" id="VideoDataset">
-<a class="viewcode-back" href="../../../data_utils/#utils.data_utils.VideoDataset">[docs]</a>
+<a class="viewcode-back" href="../../../../data_utils/#cdfvd.utils.data_utils.VideoDataset">[docs]</a>
 <span class="k">class</span> <span class="nc">VideoDataset</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Generic dataset for videos files stored in folders.</span>
@@ -394,7 +393,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_clips</span><span class="o">.</span><span class="n">get_clip_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_random_clip_from_video</span>
         
 <div class="viewcode-block" id="VideoDataset.get_random_clip_from_video">
-<a class="viewcode-back" href="../../../data_utils/#utils.data_utils.VideoDataset.get_random_clip_from_video">[docs]</a>
+<a class="viewcode-back" href="../../../../data_utils/#cdfvd.utils.data_utils.VideoDataset.get_random_clip_from_video">[docs]</a>
     <span class="k">def</span> <span class="nf">get_random_clip_from_video</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Sample a random clip starting index from the video.</span>
@@ -429,7 +428,7 @@
 
 
 <div class="viewcode-block" id="FrameDataset">
-<a class="viewcode-back" href="../../../data_utils/#utils.data_utils.FrameDataset">[docs]</a>
+<a class="viewcode-back" href="../../../../data_utils/#cdfvd.utils.data_utils.FrameDataset">[docs]</a>
 <span class="k">class</span> <span class="nc">FrameDataset</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    Generic dataset for videos stored as images. The loading will iterates over all the folders and subfolders</span>
@@ -457,7 +456,7 @@
         <span class="k">return</span> <span class="n">return_list</span>
 
 <div class="viewcode-block" id="FrameDataset.load_video_frames">
-<a class="viewcode-back" href="../../../data_utils/#utils.data_utils.FrameDataset.load_video_frames">[docs]</a>
+<a class="viewcode-back" href="../../../../data_utils/#cdfvd.utils.data_utils.FrameDataset.load_video_frames">[docs]</a>
     <span class="k">def</span> <span class="nf">load_video_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataroot</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Loads all the video frames under the dataroot and returns a list of all the video frames.</span>
@@ -466,7 +465,7 @@
 <span class="sd">            dataroot: The root directory containing the video frames.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            data_all: A list of all the video frames.</span>
+<span class="sd">            A list of all the video frames.</span>
 
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">data_all</span> <span class="o">=</span> <span class="p">[]</span>
@@ -490,7 +489,7 @@
 
 
 <div class="viewcode-block" id="FrameDataset.getTensor">
-<a class="viewcode-back" href="../../../data_utils/#utils.data_utils.FrameDataset.getTensor">[docs]</a>
+<a class="viewcode-back" href="../../../../data_utils/#cdfvd.utils.data_utils.FrameDataset.getTensor">[docs]</a>
     <span class="k">def</span> <span class="nf">getTensor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Returns a tensor of the video frames at the given index.</span>
@@ -498,8 +497,8 @@
 <span class="sd">        Args:</span>
 <span class="sd">            index: The index of the video frames to return.</span>
 
-<span class="sd">        Return:</span>
-<span class="sd">            video_clip: A BCTHW tensor in the range `[0, 1]` of the video frames at the given index.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            A BCTHW tensor in the range `[0, 1]` of the video frames at the given index.</span>
 
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">video</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_all</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>

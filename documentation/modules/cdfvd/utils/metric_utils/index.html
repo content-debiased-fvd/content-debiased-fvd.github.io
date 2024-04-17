@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en" data-content_root="../../../">
+<html class="no-js" lang="en" data-content_root="../../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
@@ -11,10 +11,10 @@
         gtag('js', new Date());
         gtag('config', 'G-RRGY51J5ZH');
     </script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
+    <link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>utils.metric_utils - content-debiased-fvd</title>
+        <title>cdfvd.utils.metric_utils - content-debiased-fvd</title>
       <link rel="stylesheet" type="text/css" href="../../../../assets/pygments.css?v=b20cc3f5" />
     <link rel="stylesheet" type="text/css" href="../../../../assets/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../../../assets/css/custom.css" />
@@ -135,7 +135,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../"><div class="brand">content-debiased-fvd</div></a>
+      <a href="../../../../"><div class="brand">content-debiased-fvd</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -155,12 +155,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../">
   
   
   <span class="sidebar-brand-text">content-debiased-fvd</span>
   
-</a><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
+</a><form class="sidebar-search-container" method="get" action="../../../../search/" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -168,12 +168,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Core Usage</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../fvd/">FVD Object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../fvd/">FVD Object</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Utils</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../data_utils/">Data Utils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../metric_utils/">Metric Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../data_utils/">Data Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../metric_utils/">Metric Utils</a></li>
 </ul>
 
 </div>
@@ -207,7 +207,7 @@
           </label>
         </div>
         <article role="main">
-          <h1>Source code for utils.metric_utils</h1><div class="highlight"><pre>
+          <h1>Source code for cdfvd.utils.metric_utils</h1><div class="highlight"><pre>
 <span></span><span class="c1"># Adapted from https://github.com/universome/stylegan-v/blob/master/src/metrics/metric_utils.py</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">random</span>
@@ -226,7 +226,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats">[docs]</a>
 <span class="k">class</span> <span class="nc">FeatureStats</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Class to store statistics of features, including all features and mean/covariance.</span>
@@ -249,7 +249,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">raw_cov</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="FeatureStats.set_num_features">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.set_num_features">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.set_num_features">[docs]</a>
     <span class="k">def</span> <span class="nf">set_num_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_features</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Set the number of features diminsions.</span>
@@ -267,7 +267,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.is_full">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.is_full">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.is_full">[docs]</a>
     <span class="k">def</span> <span class="nf">is_full</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Check if the maximum number of samples is reached.</span>
@@ -279,7 +279,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.append">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.append">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.append">[docs]</a>
     <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add the newly computed features to the list. Update the mean and covariance.</span>
@@ -305,7 +305,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.append_torch">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.append_torch">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.append_torch">[docs]</a>
     <span class="k">def</span> <span class="nf">append_torch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">rank</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">num_gpus</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Add the newly computed PyTorch features to the list. Update the mean and covariance.</span>
@@ -328,7 +328,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.get_all">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.get_all">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.get_all">[docs]</a>
     <span class="k">def</span> <span class="nf">get_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Get all the stored features as NumPy Array.</span>
@@ -341,7 +341,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.get_all_torch">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.get_all_torch">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.get_all_torch">[docs]</a>
     <span class="k">def</span> <span class="nf">get_all_torch</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Get all the stored features as PyTorch Tensor.</span>
@@ -353,7 +353,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.get_mean_cov">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.get_mean_cov">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.get_mean_cov">[docs]</a>
     <span class="k">def</span> <span class="nf">get_mean_cov</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Get the mean and covariance of the stored features.</span>
@@ -369,7 +369,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.save">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.save">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.save">[docs]</a>
     <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pkl_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        Save the features and statistics to a pickle file.</span>
@@ -382,7 +382,7 @@
 
 
 <div class="viewcode-block" id="FeatureStats.load">
-<a class="viewcode-back" href="../../../metric_utils/#utils.metric_utils.FeatureStats.load">[docs]</a>
+<a class="viewcode-back" href="../../../../metric_utils/#cdfvd.utils.metric_utils.FeatureStats.load">[docs]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">pkl_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;FeatureStats&#39;</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>

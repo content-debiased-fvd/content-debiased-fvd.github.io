@@ -213,7 +213,7 @@
 <h1>Data Utils<a class="headerlink" href="#data-utils" title="Link to this heading">#</a></h1>
 <!-- prettier-ignore-start --><dl class="py class">
 <dt class="sig sig-object py" id="cdfvd.utils.data_utils.VideoData">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.utils.data_utils.</span></span><span class="sig-name descname"><span class="pre">VideoData</span></span><a class="reference internal" href="../_modules/cdfvd/utils/data_utils/#VideoData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.VideoData" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.utils.data_utils.</span></span><span class="sig-name descname"><span class="pre">VideoData</span></span><a class="reference internal" href="../modules/cdfvd/utils/data_utils/#VideoData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.VideoData" title="Link to this definition">#</a></dt>
 <dd><p>Class to create dataloaders for video datasets</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -233,7 +233,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="cdfvd.utils.data_utils.VideoDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.utils.data_utils.</span></span><span class="sig-name descname"><span class="pre">VideoDataset</span></span><a class="reference internal" href="../_modules/cdfvd/utils/data_utils/#VideoDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.VideoDataset" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.utils.data_utils.</span></span><span class="sig-name descname"><span class="pre">VideoDataset</span></span><a class="reference internal" href="../modules/cdfvd/utils/data_utils/#VideoDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.VideoDataset" title="Link to this definition">#</a></dt>
 <dd><p>Generic dataset for videos files stored in folders.
 Videos of the same class are expected to be stored in a single folder. Multiple folders can exist in the provided directory.
 The class depends on <code class="docutils literal notranslate"><span class="pre">torchvision.datasets.video_utils.VideoClips</span></code> to load the videos.
@@ -250,7 +250,7 @@ Returns BCTHW videos in the range [0, 1].</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="cdfvd.utils.data_utils.VideoDataset.get_random_clip_from_video">
-<span class="sig-name descname"><span class="pre">get_random_clip_from_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="../_modules/cdfvd/utils/data_utils/#VideoDataset.get_random_clip_from_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.VideoDataset.get_random_clip_from_video" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_random_clip_from_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="../modules/cdfvd/utils/data_utils/#VideoDataset.get_random_clip_from_video"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.VideoDataset.get_random_clip_from_video" title="Link to this definition">#</a></dt>
 <dd><p>Sample a random clip starting index from the video.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -266,7 +266,7 @@ Returns BCTHW videos in the range [0, 1].</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="cdfvd.utils.data_utils.FrameDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.utils.data_utils.</span></span><span class="sig-name descname"><span class="pre">FrameDataset</span></span><a class="reference internal" href="../_modules/cdfvd/utils/data_utils/#FrameDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.FrameDataset" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.utils.data_utils.</span></span><span class="sig-name descname"><span class="pre">FrameDataset</span></span><a class="reference internal" href="../modules/cdfvd/utils/data_utils/#FrameDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.FrameDataset" title="Link to this definition">#</a></dt>
 <dd><dl class="simple">
 <dt>Generic dataset for videos stored as images. The loading will iterates over all the folders and subfolders</dt><dd><p>in the provided directory. Each leaf folder is assumed to contain frames from a single video.</p>
 </dd>
@@ -284,7 +284,7 @@ should contain folders with frames from each video.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="cdfvd.utils.data_utils.FrameDataset.load_video_frames">
-<span class="sig-name descname"><span class="pre">load_video_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataroot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="../_modules/cdfvd/utils/data_utils/#FrameDataset.load_video_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.FrameDataset.load_video_frames" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">load_video_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataroot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="../modules/cdfvd/utils/data_utils/#FrameDataset.load_video_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.FrameDataset.load_video_frames" title="Link to this definition">#</a></dt>
 <dd><p>Loads all the video frames under the dataroot and returns a list of all the video frames.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -301,7 +301,7 @@ should contain folders with frames from each video.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="cdfvd.utils.data_utils.FrameDataset.getTensor">
-<span class="sig-name descname"><span class="pre">getTensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="../_modules/cdfvd/utils/data_utils/#FrameDataset.getTensor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.FrameDataset.getTensor" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getTensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="../modules/cdfvd/utils/data_utils/#FrameDataset.getTensor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.data_utils.FrameDataset.getTensor" title="Link to this definition">#</a></dt>
 <dd><p>Returns a tensor of the video frames at the given index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

@@ -126,7 +126,6 @@
 </label>
 
 
-
 <div class="page">
   <header class="mobile-header">
     <div class="header-left">
@@ -212,8 +211,8 @@
           <section id="metric-utils">
 <h1>Metric Utils<a class="headerlink" href="#metric-utils" title="Link to this heading">#</a></h1>
 <!-- prettier-ignore-start --><dl class="py class">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils.metric_utils.</span></span><span class="sig-name descname"><span class="pre">FeatureStats</span></span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.utils.metric_utils.</span></span><span class="sig-name descname"><span class="pre">FeatureStats</span></span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats" title="Link to this definition">#</a></dt>
 <dd><p>Class to store statistics of features, including all features and mean/covariance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -225,8 +224,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.set_num_features">
-<span class="sig-name descname"><span class="pre">set_num_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.set_num_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.set_num_features" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.set_num_features">
+<span class="sig-name descname"><span class="pre">set_num_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.set_num_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.set_num_features" title="Link to this definition">#</a></dt>
 <dd><p>Set the number of features diminsions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -236,8 +235,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.is_full">
-<span class="sig-name descname"><span class="pre">is_full</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.is_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.is_full" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.is_full">
+<span class="sig-name descname"><span class="pre">is_full</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.is_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.is_full" title="Link to this definition">#</a></dt>
 <dd><p>Check if the maximum number of samples is reached.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -250,8 +249,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.append" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.append" title="Link to this definition">#</a></dt>
 <dd><p>Add the newly computed features to the list. Update the mean and covariance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -261,8 +260,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.append_torch">
-<span class="sig-name descname"><span class="pre">append_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_gpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.append_torch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.append_torch" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.append_torch">
+<span class="sig-name descname"><span class="pre">append_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_gpus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.append_torch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.append_torch" title="Link to this definition">#</a></dt>
 <dd><p>Add the newly computed PyTorch features to the list. Update the mean and covariance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -276,8 +275,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.get_all">
-<span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.get_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.get_all" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.get_all">
+<span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.get_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.get_all" title="Link to this definition">#</a></dt>
 <dd><p>Get all the stored features as NumPy Array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -290,8 +289,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.get_all_torch">
-<span class="sig-name descname"><span class="pre">get_all_torch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.get_all_torch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.get_all_torch" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.get_all_torch">
+<span class="sig-name descname"><span class="pre">get_all_torch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tensor</span></span></span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.get_all_torch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.get_all_torch" title="Link to this definition">#</a></dt>
 <dd><p>Get all the stored features as PyTorch Tensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -304,8 +303,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.get_mean_cov">
-<span class="sig-name descname"><span class="pre">get_mean_cov</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.get_mean_cov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.get_mean_cov" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.get_mean_cov">
+<span class="sig-name descname"><span class="pre">get_mean_cov</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.get_mean_cov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.get_mean_cov" title="Link to this definition">#</a></dt>
 <dd><p>Get the mean and covariance of the stored features.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -318,8 +317,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkl_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.save" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkl_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.save" title="Link to this definition">#</a></dt>
 <dd><p>Save the features and statistics to a pickle file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -329,15 +328,15 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="utils.metric_utils.FeatureStats.load">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkl_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a></span></span><a class="reference internal" href="../_modules/utils/metric_utils/#FeatureStats.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#utils.metric_utils.FeatureStats.load" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.utils.metric_utils.FeatureStats.load">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkl_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a></span></span><a class="reference internal" href="../_modules/cdfvd/utils/metric_utils/#FeatureStats.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.utils.metric_utils.FeatureStats.load" title="Link to this definition">#</a></dt>
 <dd><p>Load the features and statistics from a pickle file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>pkl_file</strong> (<em>str</em>) – Path to the pickle file.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><em>FeatureStats</em></a></p>
+<dd class="field-even"><p><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><em>FeatureStats</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -401,16 +400,16 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Metric Utils</a><ul>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats"><code class="docutils literal notranslate"><span class="pre">FeatureStats</span></code></a><ul>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.set_num_features"><code class="docutils literal notranslate"><span class="pre">FeatureStats.set_num_features()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.is_full"><code class="docutils literal notranslate"><span class="pre">FeatureStats.is_full()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.append"><code class="docutils literal notranslate"><span class="pre">FeatureStats.append()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.append_torch"><code class="docutils literal notranslate"><span class="pre">FeatureStats.append_torch()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.get_all"><code class="docutils literal notranslate"><span class="pre">FeatureStats.get_all()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.get_all_torch"><code class="docutils literal notranslate"><span class="pre">FeatureStats.get_all_torch()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.get_mean_cov"><code class="docutils literal notranslate"><span class="pre">FeatureStats.get_mean_cov()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.save"><code class="docutils literal notranslate"><span class="pre">FeatureStats.save()</span></code></a></li>
-<li><a class="reference internal" href="#utils.metric_utils.FeatureStats.load"><code class="docutils literal notranslate"><span class="pre">FeatureStats.load()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats"><code class="docutils literal notranslate"><span class="pre">FeatureStats</span></code></a><ul>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.set_num_features"><code class="docutils literal notranslate"><span class="pre">FeatureStats.set_num_features()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.is_full"><code class="docutils literal notranslate"><span class="pre">FeatureStats.is_full()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.append"><code class="docutils literal notranslate"><span class="pre">FeatureStats.append()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.append_torch"><code class="docutils literal notranslate"><span class="pre">FeatureStats.append_torch()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.get_all"><code class="docutils literal notranslate"><span class="pre">FeatureStats.get_all()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.get_all_torch"><code class="docutils literal notranslate"><span class="pre">FeatureStats.get_all_torch()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.get_mean_cov"><code class="docutils literal notranslate"><span class="pre">FeatureStats.get_mean_cov()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.save"><code class="docutils literal notranslate"><span class="pre">FeatureStats.save()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.utils.metric_utils.FeatureStats.load"><code class="docutils literal notranslate"><span class="pre">FeatureStats.load()</span></code></a></li>
 </ul>
 </li>
 </ul>

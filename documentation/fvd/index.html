@@ -126,7 +126,6 @@
 </label>
 
 
-
 <div class="page">
   <header class="mobile-header">
     <div class="header-left">
@@ -211,11 +210,11 @@
         <article role="main">
           <section id="fvd-object">
 <h1>FVD Object<a class="headerlink" href="#fvd-object" title="Link to this heading">#</a></h1>
-<p>The major <code class="docutils literal notranslate"><span class="pre">FVD</span></code> functions are designed within <a class="reference internal" href="#fvd.cd_fvd" title="fvd.cd_fvd"><code class="xref py py-class docutils literal notranslate"><span class="pre">fvd.cd_fvd</span></code></a>, which initializes the model used to compute the fvd features,
+<p>The major <code class="docutils literal notranslate"><span class="pre">FVD</span></code> functions are designed within <code class="xref py py-class docutils literal notranslate"><span class="pre">fvd.cd_fvd</span></code>, which initializes the model used to compute the fvd features,
 support functions to load videos in different formats, and conduct the calculation.</p>
 <!-- prettier-ignore-start --><dl class="py class">
-<dt class="sig sig-object py" id="fvd.cd_fvd">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fvd.</span></span><span class="sig-name descname"><span class="pre">cd_fvd</span></span><a class="reference internal" href="../_modules/fvd/#cd_fvd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cdfvd.fvd.</span></span><span class="sig-name descname"><span class="pre">cdfvd</span></span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd" title="Link to this definition">#</a></dt>
 <dd><p>This class loads a pretrained model (I3D or VideoMAE) and contains functions to compute the FVD score between real and fake videos.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -232,29 +231,29 @@ support functions to load videos in different formats, and conduct the calculati
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.compute_fvd_from_stats">
-<span class="sig-name descname"><span class="pre">compute_fvd_from_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fake_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../metric_utils/#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../metric_utils/#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/fvd/#cd_fvd.compute_fvd_from_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.compute_fvd_from_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.compute_fvd_from_stats">
+<span class="sig-name descname"><span class="pre">compute_fvd_from_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fake_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">real_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.compute_fvd_from_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.compute_fvd_from_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function computes the FVD score between real and fake videos using precomputed features.
 If the stats are not provided, it uses the stats stored in the object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>fake_stats</strong> (<a class="reference internal" href="../metric_utils/#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><em>FeatureStats</em></a><em> | </em><em>None</em>) – <code class="docutils literal notranslate"><span class="pre">FeatureStats</span></code> object containing the features of the fake videos.</p></li>
-<li><p><strong>real_stats</strong> (<a class="reference internal" href="../metric_utils/#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><em>FeatureStats</em></a><em> | </em><em>None</em>) – <code class="docutils literal notranslate"><span class="pre">FeatureStats</span></code> object containing the features of the real videos.</p></li>
+<li><p><strong>fake_stats</strong> (<a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><em>FeatureStats</em></a><em> | </em><em>None</em>) – <code class="docutils literal notranslate"><span class="pre">FeatureStats</span></code> object containing the features of the fake videos.</p></li>
+<li><p><strong>real_stats</strong> (<a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><em>FeatureStats</em></a><em> | </em><em>None</em>) – <code class="docutils literal notranslate"><span class="pre">FeatureStats</span></code> object containing the features of the real videos.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>FVD score between the real and fake videos.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>fvd</p>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.compute_fvd">
-<span class="sig-name descname"><span class="pre">compute_fvd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fake_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/fvd/#cd_fvd.compute_fvd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.compute_fvd" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.compute_fvd">
+<span class="sig-name descname"><span class="pre">compute_fvd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fake_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.compute_fvd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.compute_fvd" title="Link to this definition">#</a></dt>
 <dd><p>This function computes the FVD score between real and fake videos in the form of numpy arrays.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -267,14 +266,14 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 <dd class="field-even"><p>FVD score between the real and fake videos.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>fvd</p>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.compute_real_stats">
-<span class="sig-name descname"><span class="pre">compute_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataLoader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../metric_utils/#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a></span></span><a class="reference internal" href="../_modules/fvd/#cd_fvd.compute_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.compute_real_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.compute_real_stats">
+<span class="sig-name descname"><span class="pre">compute_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataLoader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a></span></span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.compute_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.compute_real_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function computes the real features from a dataset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -284,14 +283,14 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 <dd class="field-even"><p>FeatureStats object containing the features of the real videos.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>real_stats</p>
+<dd class="field-odd"><p><a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><em>FeatureStats</em></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.compute_fake_stats">
-<span class="sig-name descname"><span class="pre">compute_fake_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataLoader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../metric_utils/#utils.metric_utils.FeatureStats" title="utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a></span></span><a class="reference internal" href="../_modules/fvd/#cd_fvd.compute_fake_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.compute_fake_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.compute_fake_stats">
+<span class="sig-name descname"><span class="pre">compute_fake_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataLoader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><span class="pre">FeatureStats</span></a></span></span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.compute_fake_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.compute_fake_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function computes the fake features from a dataset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -301,14 +300,14 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 <dd class="field-even"><p>FeatureStats object containing the features of the fake videos.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>fake_stats</p>
+<dd class="field-odd"><p><a class="reference internal" href="../metric_utils/#cdfvd.utils.metric_utils.FeatureStats" title="cdfvd.utils.metric_utils.FeatureStats"><em>FeatureStats</em></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.add_real_stats">
-<span class="sig-name descname"><span class="pre">add_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fvd/#cd_fvd.add_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.add_real_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.add_real_stats">
+<span class="sig-name descname"><span class="pre">add_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.add_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.add_real_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function adds features of real videos to the real_stats object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -318,8 +317,8 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.add_fake_stats">
-<span class="sig-name descname"><span class="pre">add_fake_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fake_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fvd/#cd_fvd.add_fake_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.add_fake_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.add_fake_stats">
+<span class="sig-name descname"><span class="pre">add_fake_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fake_videos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">uint8</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.add_fake_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.add_fake_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function adds features of fake videos to the fake_stats object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -329,20 +328,20 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.empty_real_stats">
-<span class="sig-name descname"><span class="pre">empty_real_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fvd/#cd_fvd.empty_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.empty_real_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.empty_real_stats">
+<span class="sig-name descname"><span class="pre">empty_real_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.empty_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.empty_real_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function empties the real_stats object.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.empty_fake_stats">
-<span class="sig-name descname"><span class="pre">empty_fake_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fvd/#cd_fvd.empty_fake_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.empty_fake_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.empty_fake_stats">
+<span class="sig-name descname"><span class="pre">empty_fake_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.empty_fake_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.empty_fake_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function empties the real_stats object.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.save_real_stats">
-<span class="sig-name descname"><span class="pre">save_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fvd/#cd_fvd.save_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.save_real_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.save_real_stats">
+<span class="sig-name descname"><span class="pre">save_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.save_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.save_real_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function saves the real_stats object to a file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -352,8 +351,8 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.load_real_stats">
-<span class="sig-name descname"><span class="pre">load_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fvd/#cd_fvd.load_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.load_real_stats" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.load_real_stats">
+<span class="sig-name descname"><span class="pre">load_real_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.load_real_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.load_real_stats" title="Link to this definition">#</a></dt>
 <dd><p>This function loads the real_stats object from a file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -363,8 +362,8 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.load_videos">
-<span class="sig-name descname"><span class="pre">load_videos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_every_n_frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'video_numpy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataLoader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/fvd/#cd_fvd.load_videos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.load_videos" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.load_videos">
+<span class="sig-name descname"><span class="pre">load_videos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">video_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_every_n_frames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'video_numpy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataLoader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.load_videos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.load_videos" title="Link to this definition">#</a></dt>
 <dd><p>This function loads videos from a way specified by <code class="docutils literal notranslate"><span class="pre">data_type</span></code>.
 <code class="docutils literal notranslate"><span class="pre">video_numpy</span></code> loads videos from a file containing a numpy array with the shape <code class="docutils literal notranslate"><span class="pre">(B,</span> <span class="pre">T,</span> <span class="pre">H,</span> <span class="pre">W,</span> <span class="pre">C)</span></code>.
 <code class="docutils literal notranslate"><span class="pre">video_folder</span></code> loads videos from a folder containing video files.
@@ -386,14 +385,14 @@ If the stats are not provided, it uses the stats stored in the object.</p>
 <dd class="field-even"><p>Dataloader or list of numpy arrays containing the videos.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>video_loader</p>
+<dd class="field-odd"><p><em>DataLoader</em> | <em>List</em> | None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="fvd.cd_fvd.offload_model_to_cpu">
-<span class="sig-name descname"><span class="pre">offload_model_to_cpu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fvd/#cd_fvd.offload_model_to_cpu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fvd.cd_fvd.offload_model_to_cpu" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="cdfvd.fvd.cdfvd.offload_model_to_cpu">
+<span class="sig-name descname"><span class="pre">offload_model_to_cpu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cdfvd/fvd/#cdfvd.offload_model_to_cpu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#cdfvd.fvd.cdfvd.offload_model_to_cpu" title="Link to this definition">#</a></dt>
 <dd><p>This function offloads the model to the CPU to release the memory.</p>
 </dd></dl>
 
@@ -464,19 +463,19 @@ If the stats are not provided, it uses the stats stored in the object.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">FVD Object</a><ul>
-<li><a class="reference internal" href="#fvd.cd_fvd"><code class="docutils literal notranslate"><span class="pre">cd_fvd</span></code></a><ul>
-<li><a class="reference internal" href="#fvd.cd_fvd.compute_fvd_from_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.compute_fvd_from_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.compute_fvd"><code class="docutils literal notranslate"><span class="pre">cd_fvd.compute_fvd()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.compute_real_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.compute_real_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.compute_fake_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.compute_fake_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.add_real_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.add_real_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.add_fake_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.add_fake_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.empty_real_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.empty_real_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.empty_fake_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.empty_fake_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.save_real_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.save_real_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.load_real_stats"><code class="docutils literal notranslate"><span class="pre">cd_fvd.load_real_stats()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.load_videos"><code class="docutils literal notranslate"><span class="pre">cd_fvd.load_videos()</span></code></a></li>
-<li><a class="reference internal" href="#fvd.cd_fvd.offload_model_to_cpu"><code class="docutils literal notranslate"><span class="pre">cd_fvd.offload_model_to_cpu()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd"><code class="docutils literal notranslate"><span class="pre">cdfvd</span></code></a><ul>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.compute_fvd_from_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.compute_fvd_from_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.compute_fvd"><code class="docutils literal notranslate"><span class="pre">cdfvd.compute_fvd()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.compute_real_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.compute_real_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.compute_fake_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.compute_fake_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.add_real_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.add_real_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.add_fake_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.add_fake_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.empty_real_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.empty_real_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.empty_fake_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.empty_fake_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.save_real_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.save_real_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.load_real_stats"><code class="docutils literal notranslate"><span class="pre">cdfvd.load_real_stats()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.load_videos"><code class="docutils literal notranslate"><span class="pre">cdfvd.load_videos()</span></code></a></li>
+<li><a class="reference internal" href="#cdfvd.fvd.cdfvd.offload_model_to_cpu"><code class="docutils literal notranslate"><span class="pre">cdfvd.offload_model_to_cpu()</span></code></a></li>
 </ul>
 </li>
 </ul>

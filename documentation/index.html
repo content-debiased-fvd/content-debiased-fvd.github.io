@@ -230,10 +230,10 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 
 <span class="c1"># Compute the FVD on two sets of videos.</span>
 from<span class="w"> </span>cdfvd<span class="w"> </span>import<span class="w"> </span>fvd
-<span class="nv">fvd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fvd.cdfvd<span class="o">(</span><span class="s1">&#39;videomae&#39;</span>,<span class="w"> </span><span class="nv">ckpt_path</span><span class="o">=</span>None<span class="o">)</span>
-fvd.compute_real_stats<span class="o">(</span>fvd.load_videos<span class="o">(</span>'path/to/realvideos/'<span class="o">))</span>
-fvd.compute_fake_stats<span class="o">(</span>fvd.load_videos<span class="o">(</span>'path/to/fakevideos/'<span class="o">))</span>
-<span class="nv">fvd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fvd.compute_fvd_from_stats<span class="o">()</span>
+<span class="nv">evaluator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fvd.cdfvd<span class="o">(</span><span class="s1">&#39;videomae&#39;</span>,<span class="w"> </span><span class="nv">ckpt_path</span><span class="o">=</span>None<span class="o">)</span>
+evaluator.compute_real_stats<span class="o">(</span>evaluator.load_videos<span class="o">(</span>'path/to/realvideos/'<span class="o">))</span>
+evaluator.compute_fake_stats<span class="o">(</span>evaluator.load_videos<span class="o">(</span>'path/to/fakevideos/'<span class="o">))</span>
+<span class="nv">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>evaluator.compute_fvd_from_stats<span class="o">()</span>
 </pre></div>
 </div>
 <!-- prettier-ignore-start --><div class="toctree-wrapper compound">
